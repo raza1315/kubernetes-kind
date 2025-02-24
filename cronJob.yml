@@ -1,0 +1,22 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: demo-cronjob
+  namespace: nginx-ns
+spec:
+  schedule: "* * * * *"  # Runs every 5 minutes
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+         name: cronjob-pod
+        spec:
+          containers:
+            - name: cronjob-container
+              image: busybox:latest
+              command:
+                - /bin/sh
+                - -c
+                - echo "Hello from CronJob!" && date
+          restartPolicy: OnFailure  # Restart if it fails
+

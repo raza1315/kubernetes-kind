@@ -16,5 +16,5 @@ spec:
    containers:
    - name: batch-container
      image: busybox:latest
-     command: ["sh","-c","echo Hey from the busybox container && sleep 10"]
+     command: ["sh","-c","echo Hey from inside the busybox container && sleep 10"]
    restartPolicy: Never
