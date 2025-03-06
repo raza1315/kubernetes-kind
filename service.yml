@@ -1,6 +1,5 @@
 kind: Service
 apiVersion: v1
-
 metadata:
  name: nginx-service
  namespace: nginx-ns
@@ -8,7 +7,11 @@ spec:
  selector:
   app: nginx
  ports:
- - protocol: TCP
-   port: 80
-   targetPort: 80
- type: ClusterIP 
+  - protocol: TCP
+    # service port 
+    port: 80
+    # container port 80 where nginx is listening
+    targetPort: 80
+ type: ClusterIP
+
+
