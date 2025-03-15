@@ -5,3 +5,4 @@ metadata:
  namespace: mysql
 data:
  MYSQL_DATABASE: razadb
+ MYSQL_ROOT_PASSWORD: raza12345
